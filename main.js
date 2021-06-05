@@ -40,7 +40,7 @@ const questions = [
     answers: [
       "More I talasi",
       "Tople pustinje I peščana prostranstva",
-      "Visoke snežne planine;",
+      "Visoke snežne planine",
       "Guste šume",
       "Mračne pećinske dubine"
     ]
@@ -116,7 +116,6 @@ const questions = [
       <span class="option${index}">${answer}</span>
       </label>`
     });
-    console.log(questionNumber);
     answer1 = document.getElementById('answer0');
   }
     
@@ -129,6 +128,10 @@ const questions = [
   
     if (questionNumber === 8) {
       questionNumber = answer1.checked ? 9 : 10;
+    } else if (questionNumber === 9 || questionNumber === 10) {
+      answersEl.innerHTML = '';
+      questionEl.innerHTML = 'Nek je sretnje :D';
+      return
     } else {
       questionNumber ++;
     }
